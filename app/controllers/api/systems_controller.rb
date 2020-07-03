@@ -8,6 +8,7 @@ class Api::SystemsController < ApplicationController
     if params[:secret] == "nasdf82fe2"
       open_gate_1
       render 'ncu3fn8u.json.jb'
+      p current_gate
     else
       redirect_to root_path
     end
@@ -17,6 +18,7 @@ class Api::SystemsController < ApplicationController
     if params[:operation] == "centerfuge" && current_gate >= 1
       open_gate_2
       render 'cef3.json.jb'
+      p "current_gate #{current_gate}"
     else
       redirect_to root_path 
     end
